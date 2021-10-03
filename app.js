@@ -21,7 +21,7 @@ const fileStorage = multer.diskStorage({
         cb(null, 'images')
     },
     filename: (req, file, cb) => {
-        cb(null, new Date().toISOString() + '-' + file.originalname)
+        cb(null, new Date().toISOString() + '_images.' + file.mimetype.split('/')[1])
     }
 })
 const fileFilter = (req, file, cb) => {
